@@ -2,7 +2,7 @@
 const CANVAS_WIDTH = 720;
 const CANVAS_HEIGHT = 1280;
 
-const GAP_HEIGHT = 500;
+const GAP_HEIGHT = 400;
 const PILLAR_WIDTH = 80;
 const PILLAR_SPEED = 9;
 
