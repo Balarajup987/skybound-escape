@@ -18,9 +18,12 @@ let obstaclePattern = 0;
 
 export function createObstacle(x) {
     const patterns = [
-        180,  // Opening near the top
-        480,  // Opening in the middle
-        780   // Opening near the bottom
+        150,  // Opening near top
+        450,  // Opening near bottom
+        280,  // Opening in middle
+        180,  // Opening near top
+        380,  // Opening in middle-lower
+        240   // Opening in middle-upper
     ];
 
     const topHeight = patterns[obstaclePattern];
@@ -28,13 +31,14 @@ export function createObstacle(x) {
     obstaclePattern = (obstaclePattern + 1) % patterns.length;
 
     obstacles.push({
-        x: x,
-        topHeight: topHeight,
+        x,
+        topHeight,
         bottomY: topHeight + GAP_HEIGHT,
         width: PILLAR_WIDTH,
         scored: false
     });
 }
+
 
 export function updateObstacles() {
     obstacles.forEach(obstacle => {
