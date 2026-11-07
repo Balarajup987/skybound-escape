@@ -211,12 +211,19 @@
     }
 }
 .game-over-character {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #f5d58a;
-    margin-bottom: 10px;
+    border: 4px solid #f5d58a;
+    margin-bottom: 12px;
+}
+
+#loseMessage {
+    color: #ff5555;
+    font-size: 22px;
+    margin: 12px 0;
+    font-weight: bold;
 }
 
 /* Mobile responsive design */
@@ -287,10 +294,18 @@
     }
 
     .game-over-character {
-        width: 75px;
-        height: 75px;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 14px;
+    border: 3px solid #f5d58a;
+    margin-bottom: 12px;
+}
+@media (max-width: 600px) {
+    .game-over-character {
+        height: 110px;
     }
-
+}
     .game-over-container h1 {
         font-size: 25px;
     }
@@ -318,5 +333,22 @@
     }
     to {
         transform: scale(1.08);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-over-container {
+        width: 95%;
+        max-width: 420px;
+        padding: 20px 15px;
+    }
+
+    .game-over-character {
+        width: 100%;
+        height: 220px;
+        object-fit: contain;
+        border-radius: 14px;
+        display: block;
+        margin: 0 auto 15px;
     }
 }

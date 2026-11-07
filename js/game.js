@@ -56,6 +56,8 @@ setupControls(fly);
 // Start game
 export function startGame(character) {
     if (!character) return;
+    gameOverMusic.pause();
+    gameOverMusic.currentTime = 0;
 
     cancelAnimationFrame(animationId);
 
@@ -129,6 +131,13 @@ function endGame() {
     running = false;
     paused = false;
 
+    // Play Game Over music
+gameOverMusic.currentTime = 0;
+
+if (soundEnabled) {
+    gameOverMusic.play().catch(console.error);
+}
+
     cancelAnimationFrame(animationId);
 
     backgroundMusic.pause();
@@ -196,10 +205,23 @@ export function toggleSound() {
         : "SOUND OFF";
 
     if (soundEnabled) {
-        if (running && !paused) {
-            backgroundMusic.play().catch(console.error);
-        }
-    } else {
-        backgroundMusic.pause();
+       if (running && !paused) {
+    backgroundMusic.play().catch(console.error);
+} else if (!running) {
+    const gameOverScreen = document.getElementById("gameOverScreen");
+
+    if (!gameOverScreen.classList.contains("hidden")) {
+        gameOverMusic.play().catch(console.error);
     }
 }
+    } else {
+        backgroundMusic.pause();
+         gameOverMusic.pause();
+    }
+}
+const gameOverMusic = new Audio(
+    "./assets/sounds/gameover-song.mp3"
+);
+
+gameOverMusic.loop = false;
+gameOverMusic.volume = 0.5;
