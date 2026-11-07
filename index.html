@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#171d1d">
+    <meta name="description" content="Skybound Escape - Endless Flying Adventure">
+
+    <title>Skybound Escape</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="screen">
+
+            <header class="home-header">
+                <h1>SKYBOUND ESCAPE</h1>
+                <p>Choose Your Character</p>
+            </header>
+
+            <div class="character-container">
+                <div class="character-grid" id="characterGrid">
+                    <!-- Character cards added through JavaScript -->
+                </div>
+            </div>
+
+            <div class="selected-character">
+                <p>SELECTED CHARACTER</p>
+
+                <h2 id="selectedCharacterName">
+                    No Character Selected
+                </h2>
+
+                <button id="startGameButton" disabled>
+                    START GAME
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- GAME SCREEN -->
+        <section id="gameScreen" class="screen hidden">
+
+            <div class="game-header">
+
+                <div class="score-box">
+                    <p>SCORE</p>
+                    <h2 id="currentScore">0</h2>
+                </div>
+
+                <div class="best-score-box">
+                    <p>BEST SCORE</p>
+                    <h2 id="highScore">0</h2>
+                </div>
+
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="gameCanvas" width="720" height="1280">
+                </canvas>
+            </div>
+
+            <p class="game-instructions">
+                TAP or PRESS SPACE to fly
+            </p>
+
+            <div class="game-controls">
+                <button id="pauseButton">PAUSE</button>
+                <button id="soundButton">SOUND ON</button>
+                <button id="homeButton">HOME</button>
+            </div>
+
+        </section>
+
+
+        <!-- GAME OVER SCREEN -->
+
+<section id="gameOverScreen" class="screen hidden">
+    <div class="game-over-container">
+
+        <h1>GAME OVER!</h1>
+
+        <h2 id="newHighScoreMessage" class="hidden">
+    🏆 NEW HIGH SCORE! 🎉
+</h2>
+
+        <img
+            id="gameOverCharacterImage"
+            src=""
+            alt="Character"
+            class="game-over-character"
+        >
+
+        <p>YOUR SCORE</p>
+        <h2 id="finalScore">0</h2>
+
+        <p>BEST SCORE</p>
+        <h2 id="finalHighScore">0</h2>
+
+        <button id="playAgainButton">PLAY AGAIN</button>
+
+        <button id="changeCharacterButton">
+            CHANGE CHARACTER
+        </button>
+
+    </div>
+</section>
+
+
+    </div>
+
+    <!-- JavaScript Entry Point -->
+    <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

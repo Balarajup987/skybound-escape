@@ -1,0 +1,121 @@
+
+/* ================= HOME SCREEN ================= */
+
+#homeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 20px;
+    background:
+        radial-gradient(
+            circle at top,
+            #354e48,
+            #171d1d 65%
+        );
+}
+
+/* Header */
+
+.home-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.home-header h1 {
+    font-size: clamp(30px, 5vw, 52px);
+    letter-spacing: 3px;
+    color: #f5d58a;
+    margin-bottom: 12px;
+}
+
+.home-header p {
+    font-size: 18px;
+    color: #c6d0c7;
+}
+
+
+/* Character Grid */
+
+.character-container {
+    width: 100%;
+    max-width: 850px;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* Individual Character Card */
+
+.character-card {
+    background: #26332e;
+    border: 2px solid #43544a;
+    border-radius: 18px;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-6px);
+    border-color: #f5d58a;
+}
+
+.character-card.selected {
+    border-color: #f5d58a;
+    background: #34453a;
+    box-shadow: 0 0 18px #f5d58a40;
+}
+
+
+.character-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+
+@media(max-width:600px) {
+    .character-card img {
+        height: 160px;
+    }
+}
+
+.character-card h3 {
+    font-size: 17px;
+    color: white;
+}
+
+
+/* Selected Character */
+
+.selected-character {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.selected-character p {
+    color: #aebdb1;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.selected-character h2 {
+    margin: 12px 0 22px;
+    color: #f5d58a;
+}
+
+
+/* Start Button */
+
+#startGameButton {
+    background: #f5d58a;
+    color: #222b23;
+    min-width: 220px;
+    font-size: 17px;
+}
